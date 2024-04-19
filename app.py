@@ -11,10 +11,11 @@ from functools import wraps
 import pandas as pd
 from flask import (
     Flask, request,
-    json, make_response, Response
+    json, make_response, Response, jsonify
 )
 from flask_cors import CORS, cross_origin
 from generator import conversation, initialize_llmchain_after_refresh, initialize_database
+from transformers import pipeline
 from asgiref.wsgi import WsgiToAsgi
 # Module
 app = Flask(__name__)
